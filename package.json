@@ -1,9 +1,10 @@
 {
-  "name": "memleak-testing",
-  "version": "0.0.0",
-  "description": "",
+  "name": "leakage",
+  "version": "0.1.0",
+  "description": "Memory leak testing for node. Write tests using your favorite test runner.",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard lib/**/*.js"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "license": "MIT",
@@ -12,5 +13,8 @@
     "memwatch-next": "^0.3.0",
     "minimist": "^1.2.0",
     "pretty-bytes": "^4.0.2"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
   }
 }
