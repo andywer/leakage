@@ -4,7 +4,7 @@
   "description": "Memory leak testing for node. Write tests using your favorite test runner.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "standard lib/**/*.js"
+    "test": "node_modules/.bin/standard lib/**/*.js && node_modules/.bin/mocha test"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "pretty-bytes": "^4.0.2"
   },
   "devDependencies": {
+    "mocha": "^3.2.0",
     "standard": "^8.6.0"
   }
 }
