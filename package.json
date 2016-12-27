@@ -8,6 +8,7 @@
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "license": "MIT",
   "dependencies": {
+    "left-pad": "^1.1.3",
     "memwatch-next": "^0.3.0",
     "minimist": "^1.2.0",
     "pretty-bytes": "^4.0.2"
