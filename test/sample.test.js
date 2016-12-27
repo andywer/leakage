@@ -1,3 +1,5 @@
+// Run with Mocha (Jest should work just fine, too)
+
 const sampleLib = require('./sampleLib')
 const { iteration } = require('../lib')
 
