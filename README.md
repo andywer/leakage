@@ -1,11 +1,12 @@
-# Leakage - Memory Leak Testing for Node
+# Leakage - Memory Leak Testing for Node [![NPM Version](https://img.shields.io/npm/v/leakage.svg)](https://www.npmjs.com/package/leakage)[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Write leakage tests using your favorite test runner (Mocha, Jest, AVA, ...).
 
 Does not only support spotting and fixing memory leaks, but writing tests also enables you to prevent regressions and show that the code does not leak.
 
-[![NPM Version](https://img.shields.io/npm/v/leakage.svg)](https://www.npmjs.com/package/leakage)
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+<p align="center">
+  <img alt="Screencast" src="./docs/failing-test.png?raw=true" />
+</p>
 
 
 ## What?
