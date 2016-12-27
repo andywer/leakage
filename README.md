@@ -5,11 +5,11 @@ Write leakage tests using your favorite test runner (Mocha, Jest, AVA, ...).
 Does not only support spotting and fixing memory leaks, but writing tests also enables you to prevent regressions and show that the code does not leak.
 
 <p align="center">
-  <img alt="Screencast" src="./docs/failing-test.png?raw=true" />
+  <img alt="Screencast" width="600px" src="./docs/failing-test.png?raw=true" />
 </p>
 
 
-## What?
+## Why do we need that?
 
 Since every JavaScript runtime comes with a garbage collector you should not have to care about memory allocation / freeing memory at all, right? **Sadly not.**
 
@@ -18,7 +18,7 @@ Memory leaks are a common problem in pretty much every programming language. Mem
 As soon as you keep a reference to an object, array, arrow function, ... you do not necessarily use anymore you might have already created a memory leak. Creating an object (incl. arrays and closures) means allocating heap memory that will be freed by the next automatic garbage collection only if all references to this object have vanished.
 
 
-## Usage with Mocha/Jest
+## Usage with Mocha / Jest
 
 ```js
 import myLib from 'my-lib'
@@ -39,7 +39,7 @@ describe('myLib', () => {
 **Make sure you run all tests serially** in order to get clean heap diffs. Mocha should run them sequentially by default. Use `--runInBand` for Jest.
 
 
-## Usage with AVA/tape
+## Usage with AVA / tape
 
 ```js
 import test from 'ava'
@@ -88,7 +88,7 @@ Have an improvement? Open a pull request any time.
 
 ## To Do
 
-- Support async functions (a.k.a. Promise support)
+* Support async functions (a.k.a. Promise support)
 
 
 ## License
