@@ -1,4 +1,4 @@
-# Leakage - Memory Leak Testing for Node [![NPM Version](https://img.shields.io/npm/v/leakage.svg)](https://www.npmjs.com/package/leakage) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+# Leakage - Memory Leak Testing for Node [![Build Status](https://travis-ci.org/andywer/leakage.svg?branch=master)](https://travis-ci.org/andywer/leakage) [![NPM Version](https://img.shields.io/npm/v/leakage.svg)](https://www.npmjs.com/package/leakage) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Write leakage tests using your favorite test runner (Mocha, Jest, AVA, ...).
 
@@ -77,6 +77,15 @@ Leakage uses `memwatch-next` to trigger the garbage collector and create heap di
 You just specify an iteration: A function and how often this function shall be run. Garbage collection is triggered 6 times until the end of the iteration (so iteration count must be >= 5).
 
 If the heap size increased over more than 3 subsequent garbage collections an error is thrown.
+
+
+## Travis CI
+
+You might want your leakage tests to be run by your CI service. There is an issue with Travis CI's linux containers, `g++` and a transitive dependency of `memwatch-next` ([nan](https://www.npmjs.com/package/nan)).
+
+Fortunately there is a fix: You need to install and use version `4.8` of `g++` in order to compile the dependency.
+
+Have a look at leakage's [.travis.yml](./.travis.yml) file to see how it can be done or find further details by @btmills in this [issue](https://github.com/andywer/leakage/issues/4#issuecomment-269449814).
 
 
 ## Feedback
