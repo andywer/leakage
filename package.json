@@ -7,7 +7,17 @@
     "test": "standard lib/**/*.js && mocha test/"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
+  "contributors": [
+    "Brandon Mills (https://github.com/btmills)"
+  ],
   "license": "MIT",
+  "repository": "andywer/leakage",
+  "bugs": "https://github.com/andywer/leakage/issues",
+  "keywords": [
+    "memory",
+    "leak",
+    "testing"
+  ],
   "files": [
     "lib/"
   ],
