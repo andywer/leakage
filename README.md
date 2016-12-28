@@ -22,11 +22,11 @@ As soon as you keep a reference to an object, array, arrow function, ... you do 
 
 ```js
 import myLib from 'my-lib'
-import { iterate } from 'leakage'
+import { iteration } from 'leakage'
 
 describe('myLib', () => {
   it('does not leak when doing stuff 1k times', () => {
-    iterate(1000, () => {
+    iteration(1000, () => {
       const instance = myLib.createInstance()
       instance.doStuff('foo', 'bar')
     })
@@ -34,7 +34,7 @@ describe('myLib', () => {
 })
 ```
 
-`iterate()` will run the arrow function 1000 times and throw an error if a memory leak has been detected.
+`iteration()` will run the arrow function 1000 times and throw an error if a memory leak has been detected.
 
 **Make sure you run all tests serially** in order to get clean heap diffs. Mocha should run them sequentially by default. Use `--runInBand` for Jest.
 
@@ -44,17 +44,17 @@ describe('myLib', () => {
 ```js
 import test from 'ava'
 import myLib from 'my-lib'
-import { iterate } from 'leakage'
+import { iteration } from 'leakage'
 
 test('myLib does not leak when doing stuff 1k times', () => {
-  iterate(1000, () => {
+  iteration(1000, () => {
     const instance = myLib.createInstance()
     instance.doStuff('foo', 'bar')
   })
 })
 ```
 
-`iterate()` will run the arrow function 1000 times and throw an error if a memory leak has been detected.
+`iteration()` will run the arrow function 1000 times and throw an error if a memory leak has been detected.
 
 **Make sure you run all tests serially** in order to get clean heap diffs. Tape should run them sequentially by default. Use `--serial` for AVA.
 
