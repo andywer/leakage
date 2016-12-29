@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
-    "test": "npm run build && standard lib/**/*.js && mocha test/"
+    "test": "npm run build && standard lib/**/*.js && mocha test/",
+    "prepublish": "npm test"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
