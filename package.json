@@ -2,9 +2,10 @@
   "name": "leakage",
   "version": "0.2.0",
   "description": "Memory leak testing for node. Write tests using your favorite test runner.",
-  "main": "lib/index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "standard lib/**/*.js && mocha test/"
+    "build": "babel lib -d build",
+    "test": "npm run build && standard lib/**/*.js && mocha test/"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
@@ -19,7 +20,7 @@
     "testing"
   ],
   "files": [
-    "lib/"
+    "build/"
   ],
   "engines": {
     "node": ">= 4.0"
@@ -31,6 +32,10 @@
     "pretty-bytes": "^4.0.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-preset-env": "^1.1.4",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "standard": "^8.6.0"
