@@ -4,7 +4,7 @@
   "description": "Memory leak testing for node. Write tests using your favorite test runner.",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel lib -d build",
+    "build": "babel src -d lib",
     "test": "npm run build && standard lib/**/*.js && mocha test/"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
@@ -20,7 +20,7 @@
     "testing"
   ],
   "files": [
-    "build/"
+    "lib/"
   ],
   "engines": {
     "node": ">= 4.0"

@@ -1,4 +1,4 @@
-build/
+lib/
 node_modules/
 heap-diff.json
 npm-debug.log
