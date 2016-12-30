@@ -15,7 +15,9 @@ describe('leakage', () => {
 
   it('does not throw when testing non-leaky code', () => {
     expect(() => iterate(100, () => {
+      const objects = []
       const newObject = { foo: 'bar' }
+      objects.push(newObject)
     })).to.not.throw()
   })
 })
