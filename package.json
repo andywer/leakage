@@ -2,9 +2,9 @@
   "name": "leakage",
   "version": "0.2.0",
   "description": "Memory leak testing for node. Write tests using your favorite test runner.",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src/ -d lib/",
     "test": "npm run build && standard lib/**/*.js && mocha test/"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
