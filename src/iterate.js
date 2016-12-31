@@ -1,17 +1,13 @@
-'use strict'
-
-const memwatch = require('memwatch-next')
-const getSubsequentHeapGrowths = require('./getSubsequentHeapGrowths')
-const createLeakErrorFactory = require('./leakErrorFactory')
-const saveHeapDiffs = require('./saveHeapDiffs')
-
-module.exports = iterate
+import memwatch from 'memwatch-next'
+import getSubsequentHeapGrowths from './getSubsequentHeapGrowths'
+import createLeakErrorFactory from './leakErrorFactory'
+import saveHeapDiffs from './saveHeapDiffs'
 
 /**
  * @param {number} iterationCount
  * @param {Function} iteratorFunc
  */
-function iterate (iterationCount, iteratorFunc) {
+export default function iterate (iterationCount, iteratorFunc) {
   const garbageCollections = 6
   const throwOnSubsequentHeapGrows = 4
   iterationCount = iterationCount > garbageCollections ? iterationCount : garbageCollections
@@ -21,10 +17,7 @@ function iterate (iterationCount, iteratorFunc) {
 
   memwatch.gc()
 
-  iterationBlocks.forEach((block) => {
-    const from = block.from
-    const to = block.to
-
+  iterationBlocks.forEach(({ from, to }) => {
     const heapDiff = new memwatch.HeapDiff()
     for (let iterationNo = from; iterationNo <= to; iterationNo++) {
       iteratorFunc()

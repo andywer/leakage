@@ -1,7 +1,7 @@
 // Using mocha, since for memory leak testing we want the tests run serially, anyway
 
 const expect = require('chai').expect
-const iterate = require('../lib/index').iterate
+const iterate = require('../lib').iterate
 
 describe('leakage', () => {
   it('throws an error when testing leaky code', () => {
@@ -15,7 +15,9 @@ describe('leakage', () => {
 
   it('does not throw when testing non-leaky code', () => {
     expect(() => iterate(100, () => {
+      const objects = []
       const newObject = { foo: 'bar' }
+      objects.push(newObject)
     })).to.not.throw()
   })
 })

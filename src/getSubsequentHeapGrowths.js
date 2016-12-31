@@ -1,8 +1,4 @@
-'use strict'
-
-module.exports = getSubsequentHeapGrowths
-
-function getSubsequentHeapGrowths (heapDiffs) {
+export default function getSubsequentHeapGrowths (heapDiffs) {
   const growthSeriesSets = []
   let subsequentGrowths = []
 
