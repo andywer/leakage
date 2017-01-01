@@ -7,7 +7,7 @@ Write leakage tests using your favorite test runner (Mocha, Jest, AVA, ...).
 Does not only support spotting and fixing memory leaks, but writing tests also enables you to prevent regressions and show that the code does not leak.
 
 <p align="center">
-  <img alt="Screencast" width="600px" src="./docs/failing-test.png?raw=true" />
+  <img alt="Screencast" width="600px" src="https://github.com/andywer/leakage/raw/master/docs/failing-test.png?raw=true" />
 </p>
 
 
