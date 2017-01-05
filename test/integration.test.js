@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 // Using mocha, since for memory leak testing we want the tests run serially, anyway
 
 const expect = require('chai').expect
