@@ -1,0 +1,19 @@
+{
+  "name": "leakage",
+  "main": "lib/index",
+  "scripts": {
+    "test": "mocha --timeout 10000 test/ && standard src/**/*.js test/**/*.js"
+  },
+  "dependencies": {
+    "left-pad": "^1.1.3",
+    "memwatch-next": "^0.3.0",
+    "minimist": "^1.2.0",
+    "pretty-bytes": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.3.0",
+    "standard": "^10.0.2"
+  }
+}
