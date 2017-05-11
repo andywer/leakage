@@ -1,8 +1,28 @@
 {
   "name": "leakage",
+  "version": "0.3.0-gamma",
+  "description": "Memory leak testing for node. Write tests using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
     "test": "mocha --timeout 10000 test/ && standard src/**/*.js test/**/*.js"
+  },
+  "author": "Andy Wermke <andy@dev.next-step-software.com>",
+  "contributors": [
+    "Brandon Mills (https://github.com/btmills)"
+  ],
+  "license": "MIT",
+  "repository": "andywer/leakage",
+  "bugs": "https://github.com/andywer/leakage/issues",
+  "keywords": [
+    "memory",
+    "leak",
+    "testing"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">= 7.0"
   },
   "dependencies": {
     "left-pad": "^1.1.3",
