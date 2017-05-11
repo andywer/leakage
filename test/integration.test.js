@@ -40,23 +40,23 @@ describe('leakage', () => {
     }
   })
 
-  // it('creates a clean heap diff when running an async no-op function', () => {
-  //   return iterate.async(() => Promise.resolve())
-  //     .then(heapDiffs => {
-  //       for (const heapDiff of heapDiffs) {
-  //         expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(1024)
-  //       }
-  //     })
-  // })
+  it('creates a clean heap diff when running an async no-op function', () => {
+    return iterate.async(() => Promise.resolve())
+      .then(heapDiffs => {
+        for (const heapDiff of heapDiffs) {
+          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(16*1024)
+        }
+      })
+  })
 
-  // it('creates a clean heap diff when running an async deferred no-op function', () => {
-  //   return iterate.async(() => new Promise(resolve => setTimeout(resolve, 10)))
-  //     .then(heapDiffs => {
-  //       for (const heapDiff of heapDiffs) {
-  //         expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(1024)
-  //       }
-  //     })
-  // })
+  it.skip('creates a clean heap diff when running an async deferred no-op function', () => {
+    return iterate.async(() => new Promise(resolve => setTimeout(resolve, 10)))
+      .then(heapDiffs => {
+        for (const heapDiff of heapDiffs) {
+          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(16*1024)
+        }
+      })
+  })
 
   // TODO: Add async tests
 })
