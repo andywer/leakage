@@ -18,4 +18,13 @@ describe('leakage', () => {
       iterate.async(() => {})
     ).to.eventually.be.rejectedWith(/Use iterate\(\)/)
   })
+
+  it('rejects concurrent test runs', () => {
+    return expect(
+      Promise.all([
+        iterate.async(async () => {}),
+        iterate.async(async () => {})
+      ])
+    ).to.eventually.be.rejectedWith(/Detected concurrently running tests/)
+  })
 })
