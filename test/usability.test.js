@@ -9,7 +9,7 @@ const { iterate } = require('../lib/index')
 describe('leakage', () => {
   it('throws on iterate(<async function>)', () => {
     expect(
-      () => iterate(async () => {})
+      () => iterate(() => Promise.resolve())
     ).to.throw(/Use iterate\.async\(\)/)
   })
 
@@ -22,8 +22,8 @@ describe('leakage', () => {
   it('rejects concurrent test runs', () => {
     return expect(
       Promise.all([
-        iterate.async(async () => {}),
-        iterate.async(async () => {})
+        iterate.async(() => Promise.resolve()),
+        iterate.async(() => Promise.resolve())
       ])
     ).to.eventually.be.rejectedWith(/Detected concurrently running tests/)
   })

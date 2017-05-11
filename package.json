@@ -22,7 +22,7 @@
     "lib/"
   ],
   "engines": {
-    "node": ">= 7.0"
+    "node": ">= 6.0"
   },
   "dependencies": {
     "left-pad": "^1.1.3",
