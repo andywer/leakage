@@ -21,12 +21,16 @@ describe('leakage', () => {
       })
   })
 
-  it.skip('creates a clean heap diff when running an async deferred no-op function', () => {
-    return iterate.async(() => new Promise(resolve => setTimeout(resolve, 10)))
+  it('creates only a small heap diff when running an async deferred no-op function', () => {
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+    return iterate.async(() => delay(10), { gcollections: 15 })
       .then(heapDiffs => {
         for (const heapDiff of heapDiffs) {
-          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(16 * 1024)
+          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(24 * 1024)
         }
       })
   })
+
+  // TODO: The sensitivity level is not exceeded when running sync code with few and with many iterations
+  // TODO: The sensitivity level is not exceeded when running async code with few and with many iterations
 })

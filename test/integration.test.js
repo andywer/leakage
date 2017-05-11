@@ -3,6 +3,7 @@
 
 require('chai').use(require('chai-as-promised'))
 
+const assert = require('chai').assert
 const expect = require('chai').expect
 const { iterate } = require('../lib/index')
 
@@ -33,5 +34,37 @@ describe('leakage', () => {
     })).to.not.throw()
   })
 
-  // TODO: Add async tests
+  it('returns a rejecting promise when testing leaky code', () => {
+    const objects = []
+
+    return expect(
+      iterate.async(() => new Promise(
+        resolve => setTimeout(() => {
+          const newObject = {
+            foo: 'bar',
+            baz () {
+              return 'Some output'
+            }
+          }
+          objects.push(newObject)     // <= leak
+          resolve()
+        }, 20)
+      ))
+    ).to.eventually.be.rejectedWith(/^Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
+  })
+
+  it('returns a resolving promise when testing non-leaky code', () => {
+    const promise = iterate.async(() => new Promise(
+      resolve => setTimeout(() => {
+        const objects = []
+        const newObject = { foo: 'bar' }
+        objects.push(newObject)
+        resolve()
+      }, 20)
+    ))
+    assert(promise.then)
+    expect(typeof promise.then).to.equal('function')
+
+    return promise
+  })
 })
