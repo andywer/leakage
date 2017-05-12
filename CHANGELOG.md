@@ -2,7 +2,7 @@
 
 ## v0.3.0
 
-- Support for asynchronous tests: `iterate.async(iterator: Function, options: ?Object): Promise<HeapDiff[]>` ([#7](https://github.com/andywer/leakage/issues/7))
+- Support for asynchronous tests: `iterate.async(iterator: Function, options: ?Object): Promise<Result>` ([#7](https://github.com/andywer/leakage/issues/7))
 - Changed API: `iterate(iterations: number, iterator: Function) => iterate(iterator: Function, options: ?Object)`
 - Pretty much a complete rewrite of the library
 - Added heap footprint tests checking the library's own footprint
