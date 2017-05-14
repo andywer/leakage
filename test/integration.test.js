@@ -5,7 +5,7 @@ require('chai').use(require('chai-as-promised'))
 
 const assert = require('chai').assert
 const expect = require('chai').expect
-const { iterate } = require('../lib/index')
+const { iterate, LeakageError } = require('../lib/index')
 
 describe('leakage', () => {
   it('throws an error when testing leaky code', () => {
@@ -14,7 +14,7 @@ describe('leakage', () => {
     expect(() => iterate(() => {
       const newObject = { foo: 'bar' }
       objects.push(newObject)     // <= leak
-    })).to.throw(/^Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
+    })).to.throw(LeakageError, /Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
   })
 
   it('does not throw when testing non-leaky code', () => {
@@ -50,7 +50,7 @@ describe('leakage', () => {
           resolve()
         }, 20)
       ))
-    ).to.eventually.be.rejectedWith(/^Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
+    ).to.eventually.be.rejectedWith(LeakageError, /^Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
   })
 
   it('returns a resolving promise when testing non-leaky code', () => {
