@@ -138,11 +138,11 @@ Properties:
 Methods:
 * `printSummary(title: ?String, log: ?Function)` - Prints a short summary. Can pass a title to print. `log` is the function used to output the summary line by line. Defaults to `console.log`.
 
-### LeakageError
+### MemoryLeakError
 
 Memory leak errors are instances of this custom error. You can use it to check if an error is really a memory leak error or just a generic kind of problem (like a broken reference).
 
-Import it as `const { LeakageError } = require('leakage')`.
+Import it as `const { MemoryLeakError } = require('leakage')`.
 
 
 ### CLI Parameters
