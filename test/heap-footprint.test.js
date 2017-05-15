@@ -19,7 +19,7 @@ describe('leakage', () => {
       .then(result => {
         result.printSummary('async no-op function')
         for (const heapDiff of result.heapDiffs) {
-          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(16 * 1024)
+          expect(Math.abs(heapDiff.change.size_bytes)).to.be.below(17 * 1024)
         }
       })
   })
