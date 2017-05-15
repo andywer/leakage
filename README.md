@@ -14,16 +14,13 @@ Does not only support spotting and fixing memory leaks, but writing tests also e
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage with Mocha / Jest](#usage-with-mocha--jest)
-- [Usage with AVA / tape](#usage-with-ava--tape)
-- [Asynchronous Tests](#asynchronous-tests)
+- [Usage](#usage)
 - [Memory Management in JS?](#memory-management-in-js)
 - [API](#api)
-- [CLI Parameters](#cli-parameters)
 - [Under the Hood](#under-the-hood)
 - [Travis CI](#travis-ci)
 - [FAQ](#faq)
-- [Contribution](#contribution)
+- [Contribute](#contribute)
 - [License](#license)
 
 
@@ -36,7 +33,9 @@ yarn --dev leakage
 ```
 
 
-## Usage with Mocha / Jest
+## Usage
+
+### Usage with Mocha / Jest
 
 ```js
 import myLib from 'my-lib'
@@ -59,7 +58,7 @@ describe('myLib', () => {
 Use `iterate.async()` for asynchronous test code. See [Asynchronous Tests](#asynchronous-tests) and [API](#api) for details.
 
 
-## Usage with AVA / tape
+### Usage with AVA / tape
 
 ```js
 import test from 'ava'
@@ -77,7 +76,7 @@ test('myLib does not leak when doing stuff', () => {
 **Make sure you run all tests serially** in order to get clean heap diffs. Tape should run them sequentially by default. Use `--serial` for AVA.
 
 
-## Asynchronous Tests
+### Asynchronous Tests
 
 Use `iterate.async()` to test asynchronous code. The iterator function is supposed to return a promise and `iterate.async()` will return a promise itself. In case of a memory leak that returned promise will be rejected instead of `iterate` failing synchronously.
 
@@ -140,7 +139,7 @@ Methods:
 * `printSummary(title: ?String, log: ?Function)` - Prints a short summary. Can pass a title to print. `log` is the function used to output the summary line by line. Defaults to `console.log`.
 
 
-## CLI Parameters
+### CLI Parameters
 
 You can pass special CLI parameters for `leakage` to your test runner:
 
@@ -148,7 +147,7 @@ You can pass special CLI parameters for `leakage` to your test runner:
 mocha test/sample.test.js --heap-file heap-diff.json
 ```
 
-### --heap-file <output file path>
+#### --heap-file <output file path>
 
 Will make the library write a detailed heap diff JSON to the file system. Make sure you only run a single test using `it.only`. Otherwise you will only find the heap diff of the last test in the file. Useful for debugging.
 
@@ -190,7 +189,7 @@ You can try to reduce the number of heap diffs created, but beware that fewer he
 </details>
 
 
-## Contribution
+## Contribute
 
 Got any feedback, suggestions, ...? Feel free to open an [issue](https://github.com/andywer/leakage/issues) and share your thoughts!
 
