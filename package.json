@@ -1,6 +1,6 @@
 {
   "name": "leakage",
-  "version": "0.3.0-gamma",
+  "version": "0.3.0",
   "description": "Memory leak testing for node. Write tests using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
