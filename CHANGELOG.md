@@ -6,6 +6,7 @@
 - Changed API: `iterate(iterations: number, iterator: Function) => iterate(iterator: Function, options: ?Object)`
 - Pretty much a complete rewrite of the library
 - Added heap footprint tests checking the library's own footprint
+- Requires node 6+
 
 ## v0.2.0
 
