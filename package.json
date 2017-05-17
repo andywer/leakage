@@ -1,7 +1,7 @@
 {
   "name": "leakage",
   "version": "0.3.0",
-  "description": "Memory leak testing for node. Write tests using your favorite test runner.",
+  "description": "Memory leak testing for node. Javascript memory footprinting using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
     "test": "mocha --timeout 10000 test/ && standard src/**/*.js test/**/*.js"
@@ -14,9 +14,12 @@
   "repository": "andywer/leakage",
   "bugs": "https://github.com/andywer/leakage/issues",
   "keywords": [
-    "memory",
-    "leak",
-    "testing"
+    "memory leak",
+    "testing",
+    "node",
+    "javascript",
+    "v8",
+    "heap"
   ],
   "files": [
     "lib/"
