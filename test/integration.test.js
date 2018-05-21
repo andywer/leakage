@@ -14,7 +14,7 @@ describe('leakage', () => {
     expect(() => iterate(() => {
       const newObject = { foo: 'bar' }
       objects.push(newObject)     // <= leak
-    })).to.throw(MemoryLeakError, /Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
+    }, { iterations: 300 })).to.throw(MemoryLeakError, /Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
   })
 
   it('does not throw when testing non-leaky code', () => {
@@ -22,7 +22,7 @@ describe('leakage', () => {
       const objects = []
       const newObject = { foo: 'bar' }
       objects.push(newObject)
-    })).to.not.throw()
+    }, { iterations: 300 })).to.not.throw()
   })
 
   // Regression test: Would throw when run again with a different runner
