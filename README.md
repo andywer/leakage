@@ -131,7 +131,7 @@ Test for memory leaks. Will return a rejecting promise when a leak is recognized
 ### Result object
 
 Properties:
-* `heapDiffs` - An array of heap diffs as created by `memwatch-next`
+* `heapDiffs` - An array of heap diffs as created by `node-memwatch`
 * `iterations` - The number of iterator runs per heap diff
 * `gcollections` - The number of garbage collections / heap diffs performed
 
@@ -160,7 +160,7 @@ Will make the library write a detailed heap diff JSON to the file system. Make s
 
 ## Under the Hood
 
-Leakage uses `memwatch-next` to trigger the garbage collector and create heap diffs.
+Leakage uses `node-memwatch` to trigger the garbage collector and create heap diffs.
 
 You just specify an iterator function. It will be run 30 times by default then a garbage collection will be performed and a heap snapshot will be made. This process is iterated 6 times by default to collect several heap diffs, since especially in async tests there is always a bit of background noise.
 
@@ -169,7 +169,7 @@ If the heap size increased over more than `[heapDiffCount * 2 / 3]` subsequent g
 
 ## Travis CI
 
-You might want your leakage tests to be run by your CI service. There is an issue with Travis CI's linux containers, `g++` and a transitive dependency of `memwatch-next` ([nan](https://www.npmjs.com/package/nan)).
+You might want your leakage tests to be run by your CI service. There is an issue with Travis CI's linux containers, `g++` and a transitive dependency of `node-memwatch` ([nan](https://www.npmjs.com/package/nan)).
 
 Fortunately there is a fix: You need to install and use version `4.8` of `g++` in order to compile the dependency.
 
