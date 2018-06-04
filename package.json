@@ -4,7 +4,7 @@
   "description": "Memory leak testing for node. Javascript memory footprinting using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
-    "test": "mocha --timeout 10000 test/ && standard src/**/*.js test/**/*.js"
+    "test": "mocha --timeout 60000 test/ && standard src/**/*.js test/**/*.js"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
@@ -28,9 +28,9 @@
     "node": ">= 6.0"
   },
   "dependencies": {
+    "@airbnb/node-memwatch": "^1.0.2",
     "es6-error": "^4.0.2",
     "left-pad": "^1.1.3",
-    "memwatch-next": "^0.3.0",
     "minimist": "^1.2.0",
     "pretty-bytes": "^4.0.2"
   },
