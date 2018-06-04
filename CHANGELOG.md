@@ -1,5 +1,9 @@
 # Leakage - Changelog
 
+## v0.4.0
+
+- Make compatible with node 10: Use @airbnb/node-memwatch (see #27 by @alvis)
+
 ## v0.3.0
 
 - Support for asynchronous tests: `iterate.async(iterator: Function, options: ?Object): Promise<Result>` ([#7](https://github.com/andywer/leakage/issues/7))
