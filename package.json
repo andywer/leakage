@@ -4,7 +4,8 @@
   "description": "Memory leak testing for node. Javascript memory footprinting using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
-    "test": "mocha --timeout 60000 test/ && standard src/**/*.js test/**/*.js"
+    "test": "mocha --timeout 60000 test/",
+    "posttest": "standard src/**/*.js test/**/*.js"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
@@ -37,7 +38,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "mocha": "^3.3.0",
-    "standard": "^10.0.2"
+    "mocha": "^5.2.0",
+    "standard": "^11.0.1"
   }
 }

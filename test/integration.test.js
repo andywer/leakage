@@ -13,7 +13,7 @@ describe('leakage', () => {
 
     expect(() => iterate(() => {
       const newObject = { foo: 'bar' }
-      objects.push(newObject)     // <= leak
+      objects.push(newObject) // <= leak
     }, { iterations: 300 })).to.throw(MemoryLeakError, /Heap grew on \d subsequent garbage collections[\s\S]*Iterations between GCs: 30[\s\S]*Final GC details:/)
   })
 
@@ -46,7 +46,7 @@ describe('leakage', () => {
               return 'Some output'
             }
           }
-          objects.push(newObject)     // <= leak
+          objects.push(newObject) // <= leak
           resolve()
         }, 20)
       ))
