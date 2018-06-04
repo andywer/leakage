@@ -1,6 +1,6 @@
 {
   "name": "leakage",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Memory leak testing for node. Javascript memory footprinting using your favorite test runner.",
   "main": "lib/index",
   "scripts": {
