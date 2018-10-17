@@ -35,7 +35,9 @@ yarn --dev leakage
 
 ## Usage
 
-### Usage with Mocha / Jest
+In theory you could use any testing framework to run leakage tests. In practice, though, you want to use one that generates a minimal memory overhead itself. We suggest using Mocha or Tape, since they are quite simple and don't produce much noise in the captured data.
+
+### Usage with Mocha
 
 ```js
 import myLib from 'my-lib'
@@ -53,15 +55,15 @@ describe('myLib', () => {
 
 `iterate()` will run the function several times, create a heap snapshot and repeat that process until there is a set of heap diffs. If a memory leak has been detected an error with some debugging information will be thrown.
 
-**Make sure you run all tests serially** in order to get clean heap diffs. Mocha should run them sequentially by default. Use `--runInBand` for Jest.
+**Make sure you run all tests serially** in order to get clean heap diffs. Mocha should run them sequentially by default.
 
 Use `iterate.async()` for asynchronous test code. See [Asynchronous Tests](#asynchronous-tests) and [API](#api) for details.
 
 
-### Usage with AVA / tape
+### Usage with tape
 
 ```js
-import test from 'ava'
+import test from 'tape'
 import myLib from 'my-lib'
 import { iterate } from 'leakage'
 
@@ -72,8 +74,6 @@ test('myLib does not leak when doing stuff', () => {
   })
 })
 ```
-
-**Make sure you run all tests serially** in order to get clean heap diffs. Tape should run them sequentially by default. Use `--serial` for AVA.
 
 
 ### Asynchronous Tests
