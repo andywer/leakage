@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/andywer/leakage.svg?branch=master)](https://travis-ci.org/andywer/leakage) [![NPM Version](https://img.shields.io/npm/v/leakage.svg)](https://www.npmjs.com/package/leakage) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Write leakage tests using your favorite test runner (Mocha, Jest, AVA, ...).
+Write leakage tests using Mocha or another test runner of your choice.
 
 Does not only support spotting and fixing memory leaks, but writing tests also enables you to prevent regressions and show that the code does not leak.
 
