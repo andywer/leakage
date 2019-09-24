@@ -1,5 +1,5 @@
 {
-  "name": "@brandonros/leakage",
+  "name": "leakage",
   "version": "0.4.0",
   "description": "Memory leak testing for node. Javascript memory footprinting using your favorite test runner.",
   "main": "lib/index",
@@ -9,12 +9,11 @@
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
-    "Brandon Mills (https://github.com/btmills)",
-    "Brandon Ros (https://github.com/brandonros)"
+    "Brandon Mills (https://github.com/btmills)"
   ],
   "license": "MIT",
-  "repository": "brandonros/leakage",
-  "bugs": "https://github.com/brandonros/leakage/issues",
+  "repository": "andywer/leakage",
+  "bugs": "https://github.com/andywer/leakage/issues",
   "keywords": [
     "memory leak",
     "testing",
