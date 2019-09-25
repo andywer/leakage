@@ -6,9 +6,9 @@ addons:
     packages:
       - g++-4.8
 node_js:
-  - node    # Latest
-  - 9.0
-  - 8.11    # LTS
+# - node   # Latest
+  - 10
+  - 8      # LTS
   - 7.0
 before_install:
   - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
