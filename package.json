@@ -26,12 +26,11 @@
     "lib/"
   ],
   "engines": {
-    "node": ">= 6.0"
+    "node": ">= 8.0"
   },
   "dependencies": {
     "@aidemaster/node-memwatch": "^1.0.5",
     "es6-error": "^4.0.2",
-    "left-pad": "^1.1.3",
     "minimist": "^1.2.0",
     "pretty-bytes": "^4.0.2"
   },
