@@ -5,7 +5,7 @@
   "main": "lib/index",
   "scripts": {
     "test": "mocha --timeout 60000 test/",
-    "posttest": "standard src/**/*.js test/**/*.js"
+    "posttest": "standard lib/**/*.js test/**/*.js"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
@@ -29,7 +29,7 @@
     "node": ">= 8.0"
   },
   "dependencies": {
-    "@aidemaster/node-memwatch": "^1.0.5",
+    "@airbnb/node-memwatch": "^2.0.0",
     "es6-error": "^4.0.2",
     "minimist": "^1.2.0",
     "pretty-bytes": "^4.0.2"
@@ -37,7 +37,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "mocha": "^5.2.0",
-    "standard": "^11.0.1"
+    "mocha": "^10.0.0",
+    "standard": "^17.0.0"
   }
 }
