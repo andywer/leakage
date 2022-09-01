@@ -5,7 +5,7 @@
   "main": "lib/index",
   "scripts": {
     "test": "mocha --timeout 60000 test/",
-    "posttest": "standard src/**/*.js test/**/*.js"
+    "posttest": "standard lib/**/*.js test/**/*.js"
   },
   "author": "Andy Wermke <andy@dev.next-step-software.com>",
   "contributors": [
