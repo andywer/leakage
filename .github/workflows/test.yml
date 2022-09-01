@@ -1,0 +1,11 @@
+name: Run checks
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm install
+    - name: Run Mocha
+      run: npm run test
