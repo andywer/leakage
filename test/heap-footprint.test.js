@@ -5,6 +5,8 @@ const expect = require('chai').expect
 const { iterate } = require('../lib/index')
 
 describe('leakage', () => {
+  // There might be an issue here associated to v8's GC: https://github.com/nodejs/node/issues/28787#issuecomment-1006534048
+  // this issue occurs in 16.13.0, and might still be extant in 16.15.0
   it('creates a clean heap diff when running a sync no-op function', () => {
     const result = iterate(() => {})
     result.printSummary('sync no-op function')
