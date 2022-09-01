@@ -14,6 +14,7 @@ Does not only support spotting and fixing memory leaks, but writing tests also e
 ## Table of Contents
 
 - [Installation](#installation)
+- [Development](#development)
 - [Usage](#usage)
 - [Memory Management in JS?](#memory-management-in-js)
 - [API](#api)
@@ -32,6 +33,21 @@ npm install --save-dev leakage
 yarn --dev leakage
 ```
 
+## Development
+
+To build locally, you will need asdf (https://asdf-vm.com/). Installation instructions vary by operating system but are fairly self-explanatory.
+
+You will also need asdf-nodejs (https://github.com/asdf-vm/asdf-nodejs).
+
+Once you've installed the tooling, run
+
+```
+asdf install nodejs 16.15.0 && asdf reshim nodejs
+```
+
+To doublecheck that you have the correct node, run `node --version` and verify that the output is v16.15.0 (or at least consistent with what is in .tool-versions).
+
+You should then be able to `npm install` and plug away at the codebase.
 
 ## Usage
 
